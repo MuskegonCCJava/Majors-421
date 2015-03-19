@@ -1,5 +1,6 @@
 //	Main_Majors.java by Kyle Wolff and Brandon VanderMey
 
+import java.util.Date;
 import java.util.Scanner;
 
 
@@ -7,11 +8,14 @@ public class Main_Majors {
 	
 	enum Major {ACC, CHEM, CIS, ENG, HIS, PHYS};
 	
+	public static Date today = new Date();
+	
 	public static void main(String[] args)
 	{
 		Scanner scanner = new Scanner(System.in);
 		String userInput;
 		
+		System.out.println("Majors by Kyle Wolff and Brandon Vandermey " + today);
 		System.out.print("Choose one :  ");
 		
 		for (Major maj : Major.values())
@@ -19,9 +23,9 @@ public class Main_Majors {
 			System.out.print(maj + " ");
 		}
 		
-		System.out.println("");
-		
+		System.out.print("\nEnter: ");
 		userInput = scanner.nextLine().toUpperCase();
+		
 		
 		switch (Major.valueOf(userInput))
 		{
@@ -38,5 +42,7 @@ public class Main_Majors {
 				System.out.println(userInput + " is in the Humanities Division");
 				break;
 		}
+		
+		System.out.print("\nProgram Closing...\nThank You");
 	}
 }
